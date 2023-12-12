@@ -1,0 +1,8 @@
+fastapi
+pydantic
+uvicorn[standard]
+python-multipart
+tensorflow
+pandas
+numpy
+h5py
