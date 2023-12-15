@@ -3,6 +3,7 @@ import tensorflow as tf
 import string
 import re
 import pandas as pd
+import os
 from fastapi import FastAPI, Form
 from starlette.responses import HTMLResponse
 from tensorflow.keras.preprocessing.text import Tokenizer
