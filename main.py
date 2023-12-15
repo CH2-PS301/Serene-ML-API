@@ -26,7 +26,7 @@ def preprocess_data(text):#preprocessingdata
 
 app = FastAPI()
 
-data = pd.read_csv('depresi.csv')
+data = pd.read_csv('depresi-new.csv')
 tokenizer = Tokenizer(num_words=3000, split=' ')
 tokenizer.fit_on_texts(data['text'].values)
 
@@ -43,7 +43,7 @@ def basic_view():
 @app.post('/predict') #prediction on data
 def predict(text:str = Form(...)):
     text_clear = my_pipeline(text)
-    load = tf.keras.models.load_model('serenepath_model.h5')
+    load = tf.keras.models.load_model('serenepath_model-new.h5')
     # print("Processed Input Text:", text_clear)  # Add this line for debugging
     predict = load.predict(text_clear)
     # print("Raw Predictions:", predict)  # Add this line for debugging

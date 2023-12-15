@@ -2,7 +2,7 @@ fastapi
 pydantic
 uvicorn[standard]
 python-multipart
-tensorflow
+tensorflow[and-cuda]
 pandas
 numpy
 h5py
