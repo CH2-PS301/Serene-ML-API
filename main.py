@@ -7,6 +7,7 @@ from fastapi import FastAPI, Form
 from starlette.responses import HTMLResponse
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from uvicorn import run
 
 def preprocess_data(text):#preprocessingdata
     #Lower the text
@@ -61,3 +62,7 @@ def predict(text:str = Form(...)):
         "Label": label,
         "Probability": prob
     }
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    run(app, host="0.0.0.0", port=port)
