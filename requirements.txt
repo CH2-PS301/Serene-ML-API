@@ -6,3 +6,4 @@ tensorflow[and-cuda]
 pandas
 numpy
 h5py
+uvicorn
