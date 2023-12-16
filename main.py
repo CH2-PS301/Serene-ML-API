@@ -4,6 +4,7 @@ import string
 import re
 import pandas as pd
 import os
+import uvicorn
 from fastapi import FastAPI, Form
 from starlette.responses import HTMLResponse
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -65,5 +66,5 @@ def predict(text:str = Form(...)):
     }
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 8000))
     run(app, host="0.0.0.0", port=port)
